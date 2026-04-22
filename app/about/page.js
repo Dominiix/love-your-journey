@@ -1,6 +1,6 @@
 export const metadata = {
   title: "About Julius — LoveYourJourney",
-  description: "Meet Julius Capilitan — the mortgage broker behind LoveYourJourney.",
+  description: "Meet Julius Capilitan — the mortgage broker behind LoveYourJourney, New Zealand's financial education platform.",
 };
 
 export default function About() {
@@ -31,8 +31,8 @@ export default function About() {
           </div>
           <div className="flex justify-center">
             <div className="w-full max-w-[340px] bg-white/[0.04] border border-white/10 rounded-2xl p-8 text-center">
-              <div className="w-24 h-24 rounded-full bg-[#1e3d5c] mx-auto mb-4 flex items-center justify-center text-2xl font-extrabold text-white border-[3px] border-[rgba(184,131,42,0.3)]">
-                JC
+              <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-[3px] border-[rgba(184,131,42,0.3)]">
+                <img src="/julius.jpeg" alt="Julius Capilitan" className="w-full h-full object-cover object-top" />
               </div>
               <div className="text-white text-lg font-bold mb-1">Julius Capilitan</div>
               <div className="text-white/45 text-sm mb-4">Founder, LoveYourJourney</div>
@@ -84,7 +84,6 @@ export default function About() {
               <p className="text-[#1a1a2e] text-base leading-relaxed">Long term, Julius wants LoveYourJourney to become a cornerstone of financial education in Aotearoa — the platform that Kiwis go to first, and that schools, employers, and eventually government can point people toward with confidence.</p>
             </div>
             <div className="flex flex-col gap-5">
-              {/* Timeline */}
               <div className="bg-[#faf8f4] border border-[#e4e9f0] rounded-xl p-6">
                 <div className="text-xs font-bold tracking-widest uppercase text-[#5a6a7a] mb-5">Career Timeline</div>
                 <div className="flex flex-col gap-0">
@@ -92,7 +91,7 @@ export default function About() {
                     ["2018","Enters financial services — begins working with clients on mortgages and KiwiSaver."],
                     ["2020","Joins The Capilitan Group and builds out Century 21 Financial."],
                     ["2022","Begins working closely with Pacific and Filipino communities in NZ."],
-                    ["2024","Launches LoveYourJourney — NZ&apos;s dedicated financial education platform."],
+                    ["2024","Launches LoveYourJourney — NZ's dedicated financial education platform."],
                     ["2025","500+ enrolled students. Building toward government-backed partnership."],
                   ].map(([year,text],i,arr)=>(
                     <div key={year} className="flex gap-4 pb-5 relative">
@@ -102,13 +101,12 @@ export default function About() {
                       </div>
                       <div>
                         <div className="text-xs font-bold text-[#b8832a] mb-1">{year}</div>
-                        <div className="text-sm text-[#1a1a2e] leading-relaxed" dangerouslySetInnerHTML={{__html:text}} />
+                        <div className="text-sm text-[#1a1a2e] leading-relaxed">{text}</div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              {/* Values */}
               <div className="bg-[#faf8f4] border border-[#e4e9f0] rounded-xl p-6">
                 <div className="text-xs font-bold tracking-widest uppercase text-[#5a6a7a] mb-5">What Julius Stands For</div>
                 <div className="flex flex-col gap-4">

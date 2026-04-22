@@ -40,8 +40,8 @@ export default function Home() {
           {/* Profile card */}
           <div className="relative">
             <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#1a3a5c] to-[#2a5080] mx-auto mb-4 flex items-center justify-center text-2xl font-extrabold text-white border-[3px] border-[rgba(180,130,42,0.35)]">
-                JC
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-[3px] border-[rgba(180,130,42,0.35)]">
+                <img src="/julius.jpeg" alt="Julius Capilitan" className="w-full h-full object-cover object-top" />
               </div>
               <div className="text-white text-xl font-bold mb-1">Julius Capilitan</div>
               <div className="text-white/50 text-sm mb-4">Mortgage Broker &amp; Financial Educator</div>

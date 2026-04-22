@@ -68,9 +68,10 @@ export default function Contact() {
         {activeTab === "book" && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="flex flex-col gap-6">
-              {/* Julius card */}
               <div className="bg-[#0f2744] rounded-xl p-7 text-center">
-                <div className="w-20 h-20 rounded-full bg-[#1e3d5c] mx-auto mb-3 flex items-center justify-center text-2xl font-extrabold text-white border-[3px] border-[rgba(184,131,42,0.3)]">JC</div>
+                <div className="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden border-[3px] border-[rgba(184,131,42,0.3)]">
+                  <img src="/julius.jpeg" alt="Julius Capilitan" className="w-full h-full object-cover object-top" />
+                </div>
                 <div className="text-white font-bold text-lg mb-1">Julius Capilitan</div>
                 <div className="text-white/45 text-sm mb-4">Mortgage Broker & Financial Adviser</div>
                 <div className="w-7 h-0.5 bg-[#b8832a] mx-auto mb-4 rounded opacity-60" />
@@ -84,7 +85,6 @@ export default function Contact() {
                   ))}
                 </div>
               </div>
-              {/* What to expect */}
               <div className="bg-[#faf8f4] border border-[#e4e9f0] rounded-xl p-6">
                 <div className="text-xs font-bold tracking-widest uppercase text-[#5a6a7a] mb-4">What happens in the call</div>
                 <div className="flex flex-col gap-3">
@@ -101,14 +101,12 @@ export default function Contact() {
                   ))}
                 </div>
               </div>
-              {/* Package note */}
               <div className="bg-[rgba(184,131,42,0.07)] border border-[rgba(184,131,42,0.2)] rounded-xl p-5">
                 <div className="font-bold text-[#0f2744] text-sm mb-2">Already on the Journey + Advice package?</div>
                 <p className="text-[#5a6a7a] text-sm leading-relaxed">Your strategy call is included — no payment needed. Select &quot;Included in package&quot; as your call type below.</p>
               </div>
             </div>
 
-            {/* Booking form */}
             {submitted ? (
               <div className="bg-white border border-[#e4e9f0] rounded-xl p-10 text-center">
                 <div className="w-16 h-16 rounded-full bg-[#edf7f2] border-2 border-[rgba(26,122,74,0.2)] flex items-center justify-center mx-auto mb-5 text-2xl text-[#1a7a4a]">✓</div>
@@ -128,8 +126,6 @@ export default function Contact() {
               <div className="bg-white border border-[#e4e9f0] rounded-xl p-7">
                 <div className="font-bold text-[#0f2744] text-lg mb-1">Reserve your time with Julius</div>
                 <p className="text-[#5a6a7a] text-sm mb-6 leading-relaxed">Select a call type, pick a date and time, and fill in your details.</p>
-
-                {/* Call type */}
                 <div className="text-xs font-bold tracking-wide uppercase text-[#5a6a7a] mb-3">Call type</div>
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   {[{id:"strategy",label:"Strategy Session",desc:"60 min — mortgage, KiwiSaver, planning",price:"$200 NZD"},{id:"package",label:"Included in Package",desc:"Journey + Advice students — no charge",price:"Free"}].map(t=>(
@@ -140,8 +136,6 @@ export default function Contact() {
                     </button>
                   ))}
                 </div>
-
-                {/* Calendar */}
                 <div className="text-xs font-bold tracking-wide uppercase text-[#5a6a7a] mb-3">Select a date — April 2026</div>
                 <div className="grid grid-cols-7 gap-1 mb-5">
                   {["Mo","Tu","We","Th","Fr","Sa","Su"].map(d=>(
@@ -153,43 +147,33 @@ export default function Contact() {
                     const isAvail = availableDays.includes(day);
                     const isSelected = selectedDay === day;
                     return (
-                      <button
-                        key={day}
-                        onClick={()=>isAvail && setSelectedDay(day)}
+                      <button key={day} onClick={()=>isAvail && setSelectedDay(day)}
                         className={`aspect-square flex items-center justify-center rounded-lg text-sm transition-all
                           ${isSelected?"bg-[#0f2744] text-white font-bold":
                             isPast?"text-[#e4e9f0] cursor-default":
                             isAvail?"text-[#1a1a2e] font-semibold hover:bg-[#faf8f4] cursor-pointer":
-                            "text-[#e4e9f0] cursor-default"}`}
-                      >
+                            "text-[#e4e9f0] cursor-default"}`}>
                         {day}
                       </button>
                     );
                   })}
                 </div>
-
-                {/* Time slots */}
                 <div className="text-xs font-bold tracking-wide uppercase text-[#5a6a7a] mb-3">Select a time — NZST</div>
                 <div className="grid grid-cols-3 gap-2 mb-6">
                   {times.map(t=>{
                     const isUnavail = unavailable.includes(t);
                     const isSel = selectedTime === t;
                     return (
-                      <button
-                        key={t}
-                        onClick={()=>!isUnavail && setSelectedTime(t)}
+                      <button key={t} onClick={()=>!isUnavail && setSelectedTime(t)}
                         className={`py-2.5 rounded-lg border-2 text-sm font-semibold transition-all
                           ${isUnavail?"bg-[#faf8f4] border-[#e4e9f0] text-[#e4e9f0] cursor-not-allowed":
                             isSel?"border-[#b8832a] bg-[rgba(184,131,42,0.07)] text-[#0f2744]":
-                            "border-[#e4e9f0] text-[#5a6a7a] hover:border-[rgba(184,131,42,0.35)] hover:text-[#0f2744]"}`}
-                      >
+                            "border-[#e4e9f0] text-[#5a6a7a] hover:border-[rgba(184,131,42,0.35)] hover:text-[#0f2744]"}`}>
                         {t}
                       </button>
                     );
                   })}
                 </div>
-
-                {/* Details */}
                 <div className="text-xs font-bold tracking-wide uppercase text-[#5a6a7a] mb-3">Your details</div>
                 <div className="grid grid-cols-2 gap-3 mb-3">
                   <input className="px-3.5 py-3 border-2 border-[#e4e9f0] rounded-lg text-sm outline-none focus:border-[#b8832a] transition-colors" placeholder="First name" />
@@ -200,7 +184,7 @@ export default function Contact() {
                   <input className="px-3.5 py-3 border-2 border-[#e4e9f0] rounded-lg text-sm outline-none focus:border-[#b8832a] transition-colors" placeholder="Phone number" type="tel" />
                 </div>
                 <select className="w-full px-3.5 py-3 border-2 border-[#e4e9f0] rounded-lg text-sm outline-none focus:border-[#b8832a] transition-colors mb-3 text-[#5a6a7a]">
-                  <option value="">What's your main goal for this call?</option>
+                  <option value="">What&apos;s your main goal for this call?</option>
                   <option>Buying my first home</option>
                   <option>Refinancing an existing mortgage</option>
                   <option>KiwiSaver optimisation</option>
@@ -313,9 +297,7 @@ export default function Contact() {
             </div>
           </div>
         )}
-
       </div>
-
     </main>
   );
 }

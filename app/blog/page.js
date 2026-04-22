@@ -206,7 +206,9 @@ export default function Blog() {
 
           {/* Julius */}
           <div className="bg-[#0f2744] rounded-xl p-6 text-center">
-            <div className="w-16 h-16 rounded-full bg-[#1e3d5c] mx-auto mb-3 flex items-center justify-center text-white text-lg font-extrabold border-[3px] border-[rgba(184,131,42,0.3)]">JC</div>
+            <div className="w-16 h-16 rounded-full mx-auto mb-3 overflow-hidden border-[3px] border-[rgba(184,131,42,0.3)]">
+            <img src="/julius.jpeg" alt="Julius Capilitan" className="w-full h-full object-cover object-top" />
+            </div>
             <div className="text-white font-bold mb-1">Julius Capilitan</div>
             <div className="text-white/45 text-xs mb-3">Mortgage Broker & Financial Adviser</div>
             <div className="w-7 h-0.5 bg-[#b8832a] mx-auto mb-3 rounded opacity-60" />

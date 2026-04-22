@@ -93,8 +93,9 @@ export default function Course() {
           {/* Course card */}
           <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-7">
             <div className="flex items-center gap-4 mb-6 pb-6 border-b border-white/[0.08]">
-              <div className="w-14 h-14 rounded-full bg-[#1e3d5c] flex items-center justify-center text-white font-extrabold text-lg border-[3px] border-[rgba(184,131,42,0.3)] flex-shrink-0">JC</div>
-              <div>
+            <div className="w-14 h-14 rounded-full overflow-hidden border-[3px] border-[rgba(184,131,42,0.3)] flex-shrink-0">
+            <img src="/julius.jpeg" alt="Julius Capilitan" className="w-full h-full object-cover object-top" />
+            </div>              <div>
                 <div className="text-white font-bold">Julius Capilitan</div>
                 <div className="text-white/45 text-sm">Mortgage Broker & Financial Educator</div>
               </div>
